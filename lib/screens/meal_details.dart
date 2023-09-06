@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:meals/providers/favorites_provider.dart';
-import 'package:meals/models/meal.dart';
+import 'package:MealMapper/providers/favorites_provider.dart';
+import 'package:MealMapper/models/meal.dart';
 
 class MealDetailsScreen extends ConsumerWidget {
   const MealDetailsScreen({
@@ -13,15 +13,15 @@ class MealDetailsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final favoriteMeals = ref.watch(favoriteMealsProvider);
-    final isFavorite = favoriteMeals.contains(meal);
+    final favoriteMealMapper = ref.watch(favoriteMealMapperProvider);
+    final isFavorite = favoriteMealMapper.contains(meal);
 
     return Scaffold(
         appBar: AppBar(title: Text(meal.title), actions: [
           IconButton(
               onPressed: () {
                 final wasAdded = ref
-                    .read(favoriteMealsProvider.notifier)
+                    .read(favoriteMealMapperProvider.notifier)
                     .toggleMealFavoriteStatus(meal);
                 ScaffoldMessenger.of(context).clearSnackBars();
                 ScaffoldMessenger.of(context).showSnackBar(

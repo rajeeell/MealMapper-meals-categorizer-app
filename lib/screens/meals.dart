@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-import 'package:meals/models/meal.dart';
-import 'package:meals/screens/meal_details.dart';
-import 'package:meals/widgets/meal_item.dart';
+import 'package:MealMapper/models/meal.dart';
+import 'package:MealMapper/screens/meal_details.dart';
+import 'package:MealMapper/widgets/meal_item.dart';
 
-class MealsScreen extends StatelessWidget {
-  const MealsScreen({
+class MealMapperScreen extends StatelessWidget {
+  const MealMapperScreen({
     super.key,
     this.title,
-    required this.meals,
+    required this.MealMapper,
   });
 
   final String? title;
-  final List<Meal> meals;
+  final List<Meal> MealMapper;
   
 
   void selectMeal(BuildContext context, Meal meal) {
@@ -49,11 +49,11 @@ class MealsScreen extends StatelessWidget {
       ),
     );
 
-    if (meals.isNotEmpty) {
+    if (MealMapper.isNotEmpty) {
       content = ListView.builder(
-        itemCount: meals.length,
+        itemCount: MealMapper.length,
         itemBuilder: (ctx, index) => MealItem(
-          meal: meals[index],
+          meal: MealMapper[index],
           onSelectMeal: (meal) {
             selectMeal(context, meal);
           },

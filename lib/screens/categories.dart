@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-import 'package:meals/data/dummy_data.dart';
-import 'package:meals/models/meal.dart';
-import 'package:meals/widgets/category_grid_item.dart';
-import 'package:meals/screens/meals.dart';
-import 'package:meals/models/category.dart';
+import 'package:MealMapper/data/dummy_data.dart';
+import 'package:MealMapper/models/meal.dart';
+import 'package:MealMapper/widgets/category_grid_item.dart';
+import 'package:MealMapper/screens/meals.dart';
+import 'package:MealMapper/models/category.dart';
 
 class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({
     super.key,
-    required this.availableMeals,
+    required this.availableMealMapper,
   });
 
-  final List<Meal> availableMeals;
+  final List<Meal> availableMealMapper;
 
   @override
   State<CategoriesScreen> createState() => _CategoriesScreenState();
@@ -43,15 +43,15 @@ class _CategoriesScreenState extends State<CategoriesScreen>
   }
 
   void _selectCategory(BuildContext context, Category category) {
-    final filteredMeals = widget.availableMeals
+    final filteredMealMapper = widget.availableMealMapper
         .where((meal) => meal.categories.contains(category.id))
         .toList();
 
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (ctx) => MealsScreen(
+        builder: (ctx) => MealMapperScreen(
           title: category.title,
-          meals: filteredMeals,
+          MealMapper: filteredMealMapper,
         ),
       ),
     ); // Navigator.push(context, route)

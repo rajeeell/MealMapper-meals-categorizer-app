@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:meals/providers/filters_provider.dart';
-// import 'package:meals/screens/tabs.dart';
-// import 'package:meals/widgets/main_drawer.dart';
+import 'package:MealMapper/providers/filters_provider.dart';
+// import 'package:MealMapper/screens/tabs.dart';
+// import 'package:MealMapper/widgets/main_drawer.dart';
 
 class FiltersScreen extends ConsumerWidget {
   const FiltersScreen({super.key});
@@ -31,7 +31,7 @@ class FiltersScreen extends ConsumerWidget {
                   ),
             ),
             subtitle: Text(
-              'Only include gluten-free meals.',
+              'Only include gluten-free MealMapper.',
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                   ),
@@ -53,7 +53,7 @@ class FiltersScreen extends ConsumerWidget {
                   ),
             ),
             subtitle: Text(
-              'Only include lactose-free meals.',
+              'Only include lactose-free MealMapper.',
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                   ),
@@ -75,7 +75,7 @@ class FiltersScreen extends ConsumerWidget {
                   ),
             ),
             subtitle: Text(
-              'Only include vegetarian meals.',
+              'Only include vegetarian MealMapper.',
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                   ),
@@ -97,7 +97,7 @@ class FiltersScreen extends ConsumerWidget {
                   ),
             ),
             subtitle: Text(
-              'Only include vegan meals.',
+              'Only include vegan MealMapper.',
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                   ),

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:meals/models/meal.dart';
-import 'package:meals/screens/categories.dart';
-import 'package:meals/screens/filters.dart';
-import 'package:meals/screens/meals.dart';
-import 'package:meals/widgets/main_drawer.dart';
-import 'package:meals/providers/favorites_provider.dart';
-import 'package:meals/providers/filters_provider.dart';
+import 'package:MealMapper/models/meal.dart';
+import 'package:MealMapper/screens/categories.dart';
+import 'package:MealMapper/screens/filters.dart';
+import 'package:MealMapper/screens/meals.dart';
+import 'package:MealMapper/widgets/main_drawer.dart';
+import 'package:MealMapper/providers/favorites_provider.dart';
+import 'package:MealMapper/providers/filters_provider.dart';
 
 const kInitialFilters = {
   Filter.glutenFree: false,
@@ -46,17 +46,17 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final availableMeals = ref.watch(filteredMealsProvider);
+    final availableMealMapper = ref.watch(filteredMealMapperProvider);
 
     Widget activePage = CategoriesScreen(
-      availableMeals: availableMeals,
+      availableMealMapper: availableMealMapper,
     );
     var activePageTitle = 'Categories';
 
     if (_selectedPageIndex == 1) {
-      final favoriteMeals = ref.watch(favoriteMealsProvider);
-      activePage = MealsScreen(
-        meals: favoriteMeals,
+      final favoriteMealMapper = ref.watch(favoriteMealMapperProvider);
+      activePage = MealMapperScreen(
+        MealMapper: favoriteMealMapper,
       );
       activePageTitle = 'Your Favorites';
     }
